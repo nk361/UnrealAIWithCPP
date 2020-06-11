@@ -16,7 +16,9 @@ public class RiderUse : ModuleRules
 			"InputCore",
 			"AIModule",
 			"GameplayTasks",
-			"NavigationSystem"
+			"NavigationSystem",
+			"ShaderDeclarationDemo",//part of the temaran shader tutorial plugin
+			"ShaderUsageDemo"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });

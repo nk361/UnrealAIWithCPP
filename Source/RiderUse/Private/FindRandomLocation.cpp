@@ -8,6 +8,7 @@
 //#include "BehaviorTree/Blackboard/BlackboardKeyType.h"
 #include "BehaviorTree/Blackboard/BlackboardKeyType_Vector.h"
 #include "blackboard_keys.h"
+#include "Engine/Engine.h"
 
 UFindRandomLocation::UFindRandomLocation(FObjectInitializer const& object_initializer)//to display a meaningful name to the node in the blackboard
 {
@@ -16,6 +17,8 @@ UFindRandomLocation::UFindRandomLocation(FObjectInitializer const& object_initia
 
 EBTNodeResult::Type UFindRandomLocation::ExecuteTask(UBehaviorTreeComponent& owner_comp, uint8* node_memory)
 {
+    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Finding random location"));
+    
     //Get AI controller and its NPC
     ANPC_AIController* const cont = Cast<ANPC_AIController>(owner_comp.GetAIOwner());
     APawn const* npc = cont->GetPawn();

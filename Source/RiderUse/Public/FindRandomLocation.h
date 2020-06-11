@@ -19,7 +19,7 @@ class RIDERUSE_API UFindRandomLocation : public UBTTask_BlackboardBase
 	GENERATED_BODY()
 public:
 	UFindRandomLocation(FObjectInitializer const& object_initializer);
-	EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& owner_comp, uint8* node_memory);
+	EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& owner_comp, uint8* node_memory) override;
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Search", meta = (AllowPrivateAccess = "true"))
 	float search_radius = 1500.0f;
